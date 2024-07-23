@@ -1,0 +1,6 @@
+.env
+/Manifest.toml
+/docs/Manifest.toml
+/docs/build/
+docs/build
+docs/site/
