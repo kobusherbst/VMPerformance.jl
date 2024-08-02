@@ -3,5 +3,12 @@ uuid = "01ac789d-d3f1-4eb3-8b31-6b6ef0a2710d"
 authors = ["Kobus Herbst"]
 version = "1.0.0-DEV"
 
+[deps]
+Arrow = "69666777-d1a9-59fb-9406-91d4454c9d45"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+PackageCompiler = "9b87118b-4619-50d2-8e1e-99f35a4d4d9d"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+
 [compat]
 julia = "1.10"
