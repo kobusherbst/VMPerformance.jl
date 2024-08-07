@@ -5,7 +5,8 @@ using Arrow
 using Dates
 using StatsBase
 
-export clean_education
+export clean_education, educationstatus_prepare, education_clean!, individualeducation_clean
+
 #Main entry point
 function julia_main()::Cint
     clean_education()
@@ -25,10 +26,15 @@ function clean_education()::AbstractDataFrame
     println("Started cleaning education status")
     start_time = now()
     education = educationstatus_prepare()
+    println("=== Finished preparing education status after $(canonicalize(Dates.CompoundPeriod(Dates.now() - start_time)))")
     education_clean!(education)
-    Arrow.write("CleanedEducation.arrow", education)
     println("=== Finished cleaning education status after $(canonicalize(Dates.CompoundPeriod(Dates.now() - start_time)))")
+    save_education(education)
+    println("=== Finished saving education status after $(canonicalize(Dates.CompoundPeriod(Dates.now() - start_time)))")
     return education
+end
+function save_education(education::AbstractDataFrame)
+    Arrow.write("CleanedEducation.arrow", education)
 end
 """
     education_clean!(education::AbstractDataFrame)
