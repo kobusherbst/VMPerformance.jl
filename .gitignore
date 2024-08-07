@@ -7,3 +7,4 @@ docs/site/
 /compiled
 .arrow
 /.vscode
+.DS_Store
